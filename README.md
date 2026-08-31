@@ -1,4 +1,4 @@
-# Quick Tools
+# Adobe Lightroom Classic Plugin: Quick Tools
 
 ![Lua](https://img.shields.io/badge/Lua-5.1-blue) ![Lightroom SDK](https://img.shields.io/badge/Lightroom%20SDK-10.0-informational) ![Lightroom](https://img.shields.io/badge/Lightroom-6%2B-lightgrey) ![License](https://img.shields.io/badge/License-MIT-green)
 
