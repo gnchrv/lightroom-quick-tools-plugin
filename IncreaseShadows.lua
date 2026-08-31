@@ -1,7 +1,7 @@
---- Menu command: darken the current photo by half a stop
+--- Menu command: open up the shadows of the current photo
 
 -- Import the main function
 local adjustSetting = require 'AdjustSetting'
 
 -- Execute the actual command
-adjustSetting('Exposure', -0.5)
+adjustSetting('Shadows', 5)

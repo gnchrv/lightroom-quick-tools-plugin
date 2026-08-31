@@ -1,4 +1,4 @@
---- Exposure nudge shared by both menu commands
+--- Develop slider nudge shared by every menu command
 
 -- The task scheduler, the only legal way to run slow SDK calls
 local LrTasks = import 'LrTasks'
@@ -15,15 +15,31 @@ local LrApplicationView = import 'LrApplicationView'
 -- Reads and writes Develop sliders
 local LrDevelopController = import 'LrDevelopController'
 
--- The darkest and lightest exposure values available in Lightroom. Measured in stops
-local MIN_EXPOSURE = -5
-local MAX_EXPOSURE = 5
+-- The range of every slider this plugin touches. Exposure is measured in stops, the rest in Lightroom’s own -100 to 100 units
+local RANGES = {
+    Exposure   = { min = -5,   max = 5 },
+    Contrast   = { min = -100, max = 100 },
+    Highlights = { min = -100, max = 100 },
+    Shadows    = { min = -100, max = 100 },
+    Whites     = { min = -100, max = 100 },
+    Blacks     = { min = -100, max = 100 }
+}
 
---- Adds `delta` stops to the exposure of the photo the user is on
+--- Adds `delta` to one Develop slider of the photo the user is on
 -- Returns immediately: the change happens inside an async task, because catalog and Develop calls block and Lightroom kills the main thread if you block it
--- @tparam number delta stops to add, negative to darken
+-- @tparam string setting the Develop parameter name, a key of RANGES
+-- @tparam number delta amount to add, negative to go down
 -- @treturn nil
-local function adjustExposure(delta)
+local function adjustSetting(setting, delta)
+
+    -- The limits of the slider being nudged
+    local range = RANGES[setting]
+
+    -- Bail out loudly if the caller named a slider this plugin does not know
+    if not range then
+        LrDialogs.showError('Unknown Develop setting: ' .. tostring(setting))
+        return
+    end
 
     -- Everything below runs off the main thread
     LrTasks.startAsyncTask(function()
@@ -45,16 +61,16 @@ local function adjustExposure(delta)
             LrTasks.sleep(0.3)
         end
 
-        -- Get the current exposure in stops, 0 if Lightroom returns nothing
-        local current = LrDevelopController.getValue('Exposure') or 0
+        -- Get the current value, 0 if Lightroom returns nothing
+        local current = LrDevelopController.getValue(setting) or 0
 
         -- Apply the delta and clamp it into Lightroom’s range
-        local target = math.max(MIN_EXPOSURE, math.min(MAX_EXPOSURE, current + delta))
+        local target = math.max(range.min, math.min(range.max, current + delta))
 
         -- Write the new value. It will land in the photo’s history
-        LrDevelopController.setValue('Exposure', target)
+        LrDevelopController.setValue(setting, target)
     end)
 end
 
 -- Return the module that is the function itself
-return adjustExposure
+return adjustSetting

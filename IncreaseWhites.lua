@@ -1,7 +1,7 @@
---- Menu command: darken the current photo by half a stop
+--- Menu command: raise the white point of the current photo
 
 -- Import the main function
 local adjustSetting = require 'AdjustSetting'
 
 -- Execute the actual command
-adjustSetting('Exposure', -0.5)
+adjustSetting('Whites', 5)
