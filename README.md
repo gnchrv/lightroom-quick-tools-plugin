@@ -1,6 +1,6 @@
 # Quick Tools
 
-![Lua](https://img.shields.io/badge/Lua-5.1-blue) ![Lightroom SDK](https://img.shields.io/badge/Lightroom%20SDK-10.0-informational) ![Lightroom](https://img.shields.io/badge/Lightroom-6%2B-lightgrey)
+![Lua](https://img.shields.io/badge/Lua-5.1-blue) ![Lightroom SDK](https://img.shields.io/badge/Lightroom%20SDK-10.0-informational) ![Lightroom](https://img.shields.io/badge/Lightroom-6%2B-lightgrey) ![License](https://img.shields.io/badge/License-MIT-green)
 
 > A Lightroom Classic plugin that nudges Develop sliders from the menu, so the steps can be put on keyboard shortcuts.
 
