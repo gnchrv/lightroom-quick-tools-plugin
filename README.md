@@ -6,6 +6,9 @@
 
 Lightroom has no direct shortcuts for Contrast, Highlights, Shadows, Whites, Blacks and some other controls. This plugin adds a menu command for each direction of those sliders. Menu items can be assigned shortcuts via macOS System Settings, and then the sliders move by a fixed step from the keyboard.
 
+<img width="1230" height="893" alt="image" src="https://github.com/user-attachments/assets/953726f8-dd63-4634-ab8d-9e3ae4974e8b" />
+
+
 ## Installation
 
 Copy the `QuickTools.lrdevplugin` folder anywhere, then add it in Lightroom under `File → Plug-in Manager → Add`.
