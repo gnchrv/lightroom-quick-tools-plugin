@@ -25,9 +25,9 @@ The step is half a stop for Exposure and 5 units for the rest. To change it, edi
 
 ## Assigning shortcuts on macOS
 
-Lightroom cannot bind plugin commands to keys, but macOS can. Go to `System Settings → Keyboard → Keyboard Shortcuts → App Shortcuts`, add an entry for Lightroom Classic and type the menu title of the command.
+Go to `System Settings → Keyboard → Keyboard Shortcuts → App Shortcuts`, add an entry for Lightroom Classic and type the menu title of the command.
 
-**The title needs three leading spaces**. Lightroom puts plugin commands under a header with the plugin name and indents them, so the command is `   Increase Whites`, not `Increase Whites`. Without the spaces the shortcut will not work.
+**The title needs three leading spaces**. Lightroom puts plugin commands under a header with the plugin name and indents them, so the command is `   Increase Whites` (with three spaces before the letter `I`; may not be visible on GitHub), not `Increase Whites`. Without the spaces the shortcut will not work.
 
 The spaces are easy to lose in the System Settings field. As an alternative, the shortcut can be set from the Terminal to ensure the spaces are preserved:
 
