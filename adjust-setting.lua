@@ -21,19 +21,21 @@ local LrDevelopController = import 'LrDevelopController'
 -- How far each step moves each slider, as set by the user in steps.lua
 local STEPS = require 'steps'
 
--- The range of every slider this plugin touches. Exposure is measured in stops, the rest in Lightroom’s own -100 to 100 units
+-- The sliders this plugin knows, and the range to fall back on when Lightroom will not report one. Exposure is measured in stops and Temperature in Kelvin on a raw file, the rest in Lightroom’s own -100 to 100 units
 local RANGES = {
-    Exposure   = { min = -5,   max = 5 },
-    Contrast   = { min = -100, max = 100 },
-    Highlights = { min = -100, max = 100 },
-    Shadows    = { min = -100, max = 100 },
-    Whites     = { min = -100, max = 100 },
-    Blacks     = { min = -100, max = 100 },
-    Texture    = { min = -100, max = 100 },
-    Clarity    = { min = -100, max = 100 },
-    Dehaze     = { min = -100, max = 100 },
-    Vibrance   = { min = -100, max = 100 },
-    Saturation = { min = -100, max = 100 }
+    Temperature = { min = 2000, max = 50000 },
+    Tint        = { min = -150, max = 150 },
+    Exposure    = { min = -5,   max = 5 },
+    Contrast    = { min = -100, max = 100 },
+    Highlights  = { min = -100, max = 100 },
+    Shadows     = { min = -100, max = 100 },
+    Whites      = { min = -100, max = 100 },
+    Blacks      = { min = -100, max = 100 },
+    Texture     = { min = -100, max = 100 },
+    Clarity     = { min = -100, max = 100 },
+    Dehaze      = { min = -100, max = 100 },
+    Vibrance    = { min = -100, max = 100 },
+    Saturation  = { min = -100, max = 100 }
 }
 
 -- How each step shows up at the end of a menu command title, so errors can name the command the user actually clicked
@@ -107,11 +109,16 @@ local function adjustSetting(setting, step, direction)
             end
         end
 
+        -- The limits Lightroom reports for this photo, as a slider’s range can depend on the file: Temperature runs in Kelvin on a raw file and on the -100 to 100 scale on a JPEG. Fall back to the static range if the SDK gives nothing
+        local rangeMin, rangeMax = LrDevelopController.getRange(setting)
+        rangeMin = rangeMin or range.min
+        rangeMax = rangeMax or range.max
+
         -- Get the current value, 0 if Lightroom returns nothing
         local current = LrDevelopController.getValue(setting) or 0
 
-        -- Apply the delta and clamp it into Lightroom’s range
-        local target = math.max(range.min, math.min(range.max, current + delta))
+        -- Apply the delta and clamp it into the range
+        local target = math.max(rangeMin, math.min(rangeMax, current + delta))
 
         -- Write the new value, wrapped in a tracking session. A bare setValue behaves like a slider mid-drag, so Lightroom waits for the value to settle before it records a history step and undo does nothing for a second or two. Bracketing the write looks to Lightroom like a short drag that ends at once, which should make it record the step sooner
         LrDevelopController.startTracking(setting)

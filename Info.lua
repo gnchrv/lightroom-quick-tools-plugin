@@ -20,6 +20,54 @@ return {
     -- Each entry points at its command file in `commands/<slider>/`
     LrExportMenuItems = {
         {
+            title = 'Temperature: Increase a Bit',
+            file = 'commands/temperature/increase-a-bit.lua'
+        },
+        {
+            title = 'Temperature: Increase',
+            file = 'commands/temperature/increase.lua'
+        },
+        {
+            title = 'Temperature: Increase a Lot',
+            file = 'commands/temperature/increase-a-lot.lua'
+        },
+        {
+            title = 'Temperature: Decrease a Bit',
+            file = 'commands/temperature/decrease-a-bit.lua'
+        },
+        {
+            title = 'Temperature: Decrease',
+            file = 'commands/temperature/decrease.lua'
+        },
+        {
+            title = 'Temperature: Decrease a Lot',
+            file = 'commands/temperature/decrease-a-lot.lua'
+        },
+        {
+            title = 'Tint: Increase a Bit',
+            file = 'commands/tint/increase-a-bit.lua'
+        },
+        {
+            title = 'Tint: Increase',
+            file = 'commands/tint/increase.lua'
+        },
+        {
+            title = 'Tint: Increase a Lot',
+            file = 'commands/tint/increase-a-lot.lua'
+        },
+        {
+            title = 'Tint: Decrease a Bit',
+            file = 'commands/tint/decrease-a-bit.lua'
+        },
+        {
+            title = 'Tint: Decrease',
+            file = 'commands/tint/decrease.lua'
+        },
+        {
+            title = 'Tint: Decrease a Lot',
+            file = 'commands/tint/decrease-a-lot.lua'
+        },
+        {
             title = 'Exposure: Increase a Bit',
             file = 'commands/exposure/increase-a-bit.lua'
         },

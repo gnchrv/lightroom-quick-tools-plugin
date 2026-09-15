@@ -9,6 +9,9 @@ return {
     overrides = {
 
         -- An override for Exposure, as it’s measured in stops, not Lightroom's −100 to 100 units
-        Exposure = { small = 0.15, medium = 0.5, large = 1.5 }
+        Exposure = { small = 0.15, medium = 0.5, large = 1.5 },
+
+        -- An override for Temperature, as it’s measured in Kelvin on a raw file
+        Temperature = { small = 75, medium = 250, large = 600 }
     }
 }
