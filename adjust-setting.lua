@@ -52,21 +52,21 @@ local function adjustSetting(setting, step, direction)
         return
     end
 
-    -- The steps this slider overrides, if any
-    local overrides = STEPS.overrides[setting] or {}
+    -- The steps this slider overrides, if any. Either table may be missing, as steps.lua is edited by hand
+    local overrides = (STEPS.overrides or {})[setting] or {}
 
     -- How far this command moves the slider, before the direction is applied
-    local amount = overrides[step] or STEPS.default[step]
+    local amount = overrides[step] or (STEPS.default or {})[step]
 
-    -- Bail out loudly if steps.lua has no number for this step, naming the menu command the user picked rather than the step's internal name
-    if type(amount) ~= 'number' then
+    -- Bail out loudly if steps.lua has no positive number for this step, naming the menu command the user picked. A negative number would silently flip the direction
+    if type(amount) ~= 'number' or amount <= 0 then
         local command = table.concat({
             setting,
             ': ',
             direction > 0 and 'Increase' or 'Decrease',
             COMMAND_SUFFIXES[step] or ''
         })
-        LrDialogs.showError('Can’t run “' .. command .. '”: add a number for “' .. tostring(step) .. '” to steps.lua')
+        LrDialogs.showError('Can’t run “' .. command .. '”: add a positive number for “' .. tostring(step) .. '” to steps.lua')
         return
     end
 
