@@ -162,6 +162,126 @@ return {
         {
             title = 'Blacks: Decrease a Lot',
             file = 'commands/blacks/decrease-a-lot.lua'
+        },
+        {
+            title = 'Texture: Increase a Bit',
+            file = 'commands/texture/increase-a-bit.lua'
+        },
+        {
+            title = 'Texture: Increase',
+            file = 'commands/texture/increase.lua'
+        },
+        {
+            title = 'Texture: Increase a Lot',
+            file = 'commands/texture/increase-a-lot.lua'
+        },
+        {
+            title = 'Texture: Decrease a Bit',
+            file = 'commands/texture/decrease-a-bit.lua'
+        },
+        {
+            title = 'Texture: Decrease',
+            file = 'commands/texture/decrease.lua'
+        },
+        {
+            title = 'Texture: Decrease a Lot',
+            file = 'commands/texture/decrease-a-lot.lua'
+        },
+        {
+            title = 'Clarity: Increase a Bit',
+            file = 'commands/clarity/increase-a-bit.lua'
+        },
+        {
+            title = 'Clarity: Increase',
+            file = 'commands/clarity/increase.lua'
+        },
+        {
+            title = 'Clarity: Increase a Lot',
+            file = 'commands/clarity/increase-a-lot.lua'
+        },
+        {
+            title = 'Clarity: Decrease a Bit',
+            file = 'commands/clarity/decrease-a-bit.lua'
+        },
+        {
+            title = 'Clarity: Decrease',
+            file = 'commands/clarity/decrease.lua'
+        },
+        {
+            title = 'Clarity: Decrease a Lot',
+            file = 'commands/clarity/decrease-a-lot.lua'
+        },
+        {
+            title = 'Dehaze: Increase a Bit',
+            file = 'commands/dehaze/increase-a-bit.lua'
+        },
+        {
+            title = 'Dehaze: Increase',
+            file = 'commands/dehaze/increase.lua'
+        },
+        {
+            title = 'Dehaze: Increase a Lot',
+            file = 'commands/dehaze/increase-a-lot.lua'
+        },
+        {
+            title = 'Dehaze: Decrease a Bit',
+            file = 'commands/dehaze/decrease-a-bit.lua'
+        },
+        {
+            title = 'Dehaze: Decrease',
+            file = 'commands/dehaze/decrease.lua'
+        },
+        {
+            title = 'Dehaze: Decrease a Lot',
+            file = 'commands/dehaze/decrease-a-lot.lua'
+        },
+        {
+            title = 'Vibrance: Increase a Bit',
+            file = 'commands/vibrance/increase-a-bit.lua'
+        },
+        {
+            title = 'Vibrance: Increase',
+            file = 'commands/vibrance/increase.lua'
+        },
+        {
+            title = 'Vibrance: Increase a Lot',
+            file = 'commands/vibrance/increase-a-lot.lua'
+        },
+        {
+            title = 'Vibrance: Decrease a Bit',
+            file = 'commands/vibrance/decrease-a-bit.lua'
+        },
+        {
+            title = 'Vibrance: Decrease',
+            file = 'commands/vibrance/decrease.lua'
+        },
+        {
+            title = 'Vibrance: Decrease a Lot',
+            file = 'commands/vibrance/decrease-a-lot.lua'
+        },
+        {
+            title = 'Saturation: Increase a Bit',
+            file = 'commands/saturation/increase-a-bit.lua'
+        },
+        {
+            title = 'Saturation: Increase',
+            file = 'commands/saturation/increase.lua'
+        },
+        {
+            title = 'Saturation: Increase a Lot',
+            file = 'commands/saturation/increase-a-lot.lua'
+        },
+        {
+            title = 'Saturation: Decrease a Bit',
+            file = 'commands/saturation/decrease-a-bit.lua'
+        },
+        {
+            title = 'Saturation: Decrease',
+            file = 'commands/saturation/decrease.lua'
+        },
+        {
+            title = 'Saturation: Decrease a Lot',
+            file = 'commands/saturation/decrease-a-lot.lua'
         }
     }
 }

@@ -4,7 +4,7 @@
 
 > A Lightroom Classic plugin that nudges Develop sliders from the menu, so the steps can be put on keyboard shortcuts.
 
-Lightroom has no direct shortcuts for Contrast, Highlights, Shadows, Whites, Blacks and some other controls. This plugin adds menu commands that move those sliders in either direction, by one of three step sizes: `Exposure: Increase a Bit`, `Exposure: Increase`, `Exposure: Increase a Lot` and the same downwards, for each of the six sliders. Menu items can be assigned shortcuts via macOS System Settings, and then the sliders move from the keyboard.
+Lightroom has no direct shortcuts for Contrast, Highlights, Shadows, Whites, Blacks, Texture, Clarity, Dehaze, Vibrance, Saturation and some other controls. This plugin adds menu commands that move those sliders in either direction, by one of three step sizes: `Exposure: Increase a Bit`, `Exposure: Increase`, `Exposure: Increase a Lot` and the same downwards, for each of the eleven sliders. Menu items can be assigned shortcuts via macOS System Settings, and then the sliders move from the keyboard.
 
 <img width="1230" height="893" alt="image" src="https://github.com/user-attachments/assets/953726f8-dd63-4634-ab8d-9e3ae4974e8b" />
 

@@ -28,7 +28,12 @@ local RANGES = {
     Highlights = { min = -100, max = 100 },
     Shadows    = { min = -100, max = 100 },
     Whites     = { min = -100, max = 100 },
-    Blacks     = { min = -100, max = 100 }
+    Blacks     = { min = -100, max = 100 },
+    Texture    = { min = -100, max = 100 },
+    Clarity    = { min = -100, max = 100 },
+    Dehaze     = { min = -100, max = 100 },
+    Vibrance   = { min = -100, max = 100 },
+    Saturation = { min = -100, max = 100 }
 }
 
 -- How each step shows up at the end of a menu command title, so errors can name the command the user actually clicked
