@@ -6,7 +6,7 @@
 
 Lightroom has no direct shortcuts for Temperature, Tint, Contrast, Highlights, Shadows, Whites, Blacks, Texture, Clarity, Dehaze, Vibrance, Saturation and some other controls. This plugin adds menu commands that move those sliders in either direction, by one of three step sizes: `Exposure: Increase a Bit`, `Exposure: Increase`, `Exposure: Increase a Lot` and the same downwards, for each of the thirteen sliders. Menu items can be assigned shortcuts via macOS System Settings, and then the sliders move from the keyboard.
 
-<img width="1230" height="893" alt="image" src="https://github.com/user-attachments/assets/953726f8-dd63-4634-ab8d-9e3ae4974e8b" />
+<img width="1316" height="1075" alt="A screenshot showcasing available plugins commands" src="https://github.com/user-attachments/assets/85b21d3c-cb9a-4daf-98fd-277fac04230b" />
 
 
 ## Installation
