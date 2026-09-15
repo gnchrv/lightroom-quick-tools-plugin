@@ -108,8 +108,10 @@ local function adjustSetting(setting, step, direction)
         -- Apply the delta and clamp it into Lightroom’s range
         local target = math.max(range.min, math.min(range.max, current + delta))
 
-        -- Write the new value. It will land in the photo’s history
+        -- Write the new value, wrapped in a tracking session. A bare setValue behaves like a slider mid-drag, so Lightroom waits for the value to settle before it records a history step and undo does nothing for a second or two. Bracketing the write looks to Lightroom like a short drag that ends at once, which should make it record the step sooner
+        LrDevelopController.startTracking(setting)
         LrDevelopController.setValue(setting, target)
+        LrDevelopController.stopTracking()
     end)
 end
 
