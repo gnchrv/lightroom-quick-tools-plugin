@@ -95,8 +95,11 @@ local function adjustSetting(setting, step, direction)
         if LrApplicationView.getCurrentModuleName() ~= 'develop' then
             LrApplicationView.switchToModule('develop')
 
-            -- Wait a bit, as the switch is not instant and the SDK gives no callback
-            LrTasks.sleep(0.3)
+            -- Wait until the switch lands, as it is not instant and the SDK gives no callback, but give up after about two seconds
+            for _ = 1, 40 do
+                if LrApplicationView.getCurrentModuleName() == 'develop' then break end
+                LrTasks.sleep(0.05)
+            end
         end
 
         -- Get the current value, 0 if Lightroom returns nothing
