@@ -3,6 +3,9 @@
 -- The task scheduler, the only legal way to run slow SDK calls
 local LrTasks = import 'LrTasks'
 
+-- Runs an async task with a context that failure handlers can attach to
+local LrFunctionContext = import 'LrFunctionContext'
+
 -- Message boxes, used here for the "no photo" error
 local LrDialogs = import 'LrDialogs'
 
@@ -74,7 +77,10 @@ local function adjustSetting(setting, step, direction)
     local delta = amount * direction
 
     -- Everything below runs off the main thread
-    LrTasks.startAsyncTask(function()
+    LrFunctionContext.postAsyncTaskWithContext('adjustSetting', function(context)
+
+        -- Show any error thrown below in a dialog, as a plain async task swallows it and the command just does nothing
+        LrDialogs.attachErrorDialogToFunctionContext(context)
 
         -- Get the photo under the cursor in Library, or the one open in Develop
         local photo = LrApplication.activeCatalog():getTargetPhoto()
