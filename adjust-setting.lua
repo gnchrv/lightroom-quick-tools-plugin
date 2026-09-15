@@ -6,7 +6,7 @@ local LrTasks = import 'LrTasks'
 -- Runs an async task with a context that failure handlers can attach to
 local LrFunctionContext = import 'LrFunctionContext'
 
--- Message boxes, used here for the "no photo" error
+-- Message boxes, used for every error this command can hit
 local LrDialogs = import 'LrDialogs'
 
 -- The entry point to the catalog
